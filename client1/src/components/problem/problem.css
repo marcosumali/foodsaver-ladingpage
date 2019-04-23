@@ -1,0 +1,44 @@
+.Problem-header-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  text-align: center;
+}
+
+.Problem-header-box {
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+
+.Problem-detail-box {
+  padding-bottom: 4em;
+}
+
+.Problem-img-box1 {
+  margin-bottom: 2em;
+}
+
+.Problem-img-box2 {
+  margin-bottom: 1.75em;
+}
+
+.Problem-img-box3 {
+  margin-top: 1em;
+  margin-bottom: 1.8em;
+}
+
+.Problem-text {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  width: 90%;
+  font-size: 2.25vh;
+}
+
+.Problem-box {
+  margin-bottom: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  .Problem-img {
+    width: 40%;
+  }
+}

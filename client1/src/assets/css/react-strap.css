@@ -1,0 +1,6 @@
+.bg-light {
+  min-height: 10vh;
+  background-image: linear-gradient(-90deg,#F45087 0%,#FF8B8B 100%)!important;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}

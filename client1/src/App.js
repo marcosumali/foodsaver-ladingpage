@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import HomePage from './pages/homePage.jsx';
-import ErrorPage from './pages/errorPage';
+import HomePage from './pages/home/homePage';
+import ErrorPage from './pages/error/notFound';
 
 
 class App extends Component {
