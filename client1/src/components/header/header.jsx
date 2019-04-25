@@ -4,14 +4,14 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 
 import './header.css';
 
 export default class header extends Component {
   render() {
     return (
-      <div className="Header-box">
+      <div id="Header" className="Header-box">
         <Container className="Header-inner-box">
           <Row className="Header-inner-box">
             <Col md={12} lg={6} className="Container-nowrap-center">
@@ -33,10 +33,14 @@ export default class header extends Component {
                   <div className="Header-download">
                     <Row>
                       <Col sm={12} md={6} className="Container-wrap-center Header-download-box">
-                        <img src={ process.env.PUBLIC_URL + '/assets/img/Download_on_AppStore.png' } alt="Download-app-black" />
+                        <Link to="/register-user">
+                          <img src={ process.env.PUBLIC_URL + '/assets/img/Download_on_AppStore.png' } alt="Download-app-black" />
+                        </Link>
                       </Col>
                       <Col sm={12} md={6} className="Container-wrap-center Header-download-box">
-                        <img src={ process.env.PUBLIC_URL + '/assets/img/Download_on_GooglePlay.png' } alt="Download-app-black" />
+                        <Link to="/register-user">
+                          <img src={ process.env.PUBLIC_URL + '/assets/img/Download_on_GooglePlay.png' } alt="Download-app-black" />
+                        </Link>
                       </Col>
                     </Row>
                   </div>

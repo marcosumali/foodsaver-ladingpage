@@ -1,0 +1,56 @@
+.Footer-box {
+ background-color: #7E2946;
+ padding-top: 6em; 
+ padding-bottom: 4em;
+ padding-left: 2em;
+ padding-right: 2em;
+}
+
+.Socmed-box {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.Download-store-box {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.Download-store-img {
+  max-width: 144px;
+}
+
+.Footer-header-box {
+  margin-bottom: 2em;
+}
+
+.Link-header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25vh;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1em;
+}
+
+.Link-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  color: #ffffff;
+  margin-bottom: 1em;
+}
+
+.Link-text:hover {
+  text-decoration: underline;
+  text-decoration-color: #ffffff
+}
+
+.Link-box {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .Link-header, .Link-text {
+    text-align: center
+  }
+}

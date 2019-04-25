@@ -6,30 +6,22 @@ import {
 
 import '../../assets/css/react-strap.css';
 import './navbar.css';
+import Logo from '../logo/logo';
 
 export default class navbar extends Component {
   render() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Navbar.Brand href="#home">
-          <div className="Container-nowrap-center-cross">
-            <div className="Logo-box">
-              <img height="50vh" width="50vh" src={ process.env.PUBLIC_URL + '/assets/img/dishkon-logo-600px-white-transparent3.png' } alt="logo" />
-            </div>
-            <div className="Logo-text">
-              Dishkon
-            </div>
-          </div>
+          <Logo />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            <Nav.Link href="#Kenapa-dishkon">Kenapa Dishkon</Nav.Link>
+            <Nav.Link href="#Pengelola-bisnis">Daftarkan Bisnis Anda</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -11,8 +11,8 @@ export default class notFound extends Component {
         </div>
         <h2>404</h2>
         <h1>Page Not Found</h1>
-        <p style={{ textAlign: 'justify' }} >This is not the web page you are looking for. Please check the URL for mistakes and try again.</p>
-        <p style={{ textAlign: 'justify' }} >For any queries, please seek information in <a href="/support">our support page</a>.</p>
+        <p style={{ textAlign: 'justify' }} >Ini bukanlah halaman web yang Anda cari. Silakan periksa kesalahan pada URL dan coba lagi.</p>
+        <p style={{ textAlign: 'justify' }} >Untuk setiap pertanyaan, silakan hubungi <a style={{ color: '#F45087', textDecoration: 'underline' }} href="mailto:support@dishkon.co">tim support</a> kami.</p>
       </div>
     )
   }

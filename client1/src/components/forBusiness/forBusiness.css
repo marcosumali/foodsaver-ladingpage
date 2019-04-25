@@ -1,0 +1,152 @@
+.Business-box {
+  background-color: #FFE0E8;
+  border-radius: 25px;
+  padding: 4em;
+  margin-bottom: 4em;
+}
+
+.Business-header-box {
+  margin-bottom: 2em;
+}
+
+.Business-header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  text-align: center;
+  color: #F45087;
+}
+
+.Business-header1-box {
+  margin-bottom: 2em;
+}
+
+.Business-header1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25vh;
+  text-align: center;
+  color: #F45087;
+}
+
+.Business-desc-box {
+  margin-bottom: 1em;
+}
+
+.Business-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25vh;
+  color: #F45087;
+  text-align: center;
+}
+
+.Business-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.25vh;
+  color: #F45087;
+  margin-bottom: 0.5em;
+  text-align: center
+}
+
+.Register-box {
+  border-radius: 50px;
+  background-color: #F45087;
+  padding: 0.625em 2em 0.625em 2em;
+  margin-bottom: 1em;
+}
+
+.Register-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+  color: #ffffff;
+  text-align: center;
+}
+
+.Business-detail-box {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.Donut-img {
+  width: 100%;
+  margin-bottom: 4em;
+  border-radius: 25px;
+}
+
+.Container-box {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.Centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Donut-header {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.Donut-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .Business-box {
+    border-radius: 0px;
+    padding: 2em;
+  }
+
+  .Business-detail-box {
+    margin-left: 0vw !important;
+    margin-right: 0vw !important;
+  }
+  
+  .Register-box {
+    padding: 0.5em;
+  }
+
+  .Donut-header {
+    font-size: 2.5vh !important;
+    font-weight: bold;
+    margin-bottom: 3em !important;
+  }
+  
+  .Donut-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Business-detail-box {
+    margin-left: 0vw !important;
+    margin-right: 0vw !important;
+  }
+
+  .Donut-header {
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin-bottom: 3em;
+  }
+  
+  .Donut-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .Donut-header {
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 2em;
+  }
+  
+  .Donut-text {
+    display: none;
+  }
+}

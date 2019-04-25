@@ -10,7 +10,7 @@ import './problem.css';
 export default class problem extends Component {
   render() {
     return (
-      <div>
+      <div id="Kenapa-dishkon">
         <Container>
           <Row>
             <Col md={12}>

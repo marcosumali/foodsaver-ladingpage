@@ -70,6 +70,13 @@
   align-items: center;
 }
 
+.Container-nowrap-spaceevenly {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .Container-nowrap-center-cross {
   display: flex;
   flex-wrap: nowrap;
