@@ -1,0 +1,38 @@
+.bg-light {
+  min-height: 10vh;
+  background-image: linear-gradient(-90deg,#F45087 0%,#FF8B8B 100%)!important;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.modal-header {
+  background-image: linear-gradient(-90deg,#F45087 0%,#FF8B8B 100%)!important;
+  color: #ffffff;
+}
+
+.close {
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #F45087;
+  border-color: #F45087;
+}
+
+.btn-primary:hover {
+  background-color: #FFE0E8;
+  border-color: #FFE0E8;
+  color: #F45087;
+}
+
+.text-muted {
+  color: #F45087 !important;
+  font-style: italic;
+}
+
+a.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75vh;
+  color: #ffffff !important;
+  font-weight: bold;
+}
