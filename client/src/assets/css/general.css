@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* ---------- Margin Component ---------- */
+.No-padding {
+  padding: 0px !important;
+}
+
+.No-margin {
+  margin: 0px !important;
+}
+
+/* ---------- Size Component ---------- */
+.Width-100cent {
+  width: 100% !important;
+}
+
+.Height-100cent {
+  height: 100% !important;
+}
+
+
 /* ---------- Container Component ---------- */
 .Container-wrap {
   display: flex;
@@ -45,6 +67,13 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
+}
+
+.Container-nowrap-spaceevenly {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
   align-items: center;
 }
 
