@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 
 import './notFound.css';
 
 export default class notFound extends Component {
+  componentDidMount() {
+    ReactGA.pageview('/not-found');
+  }
+
   render() {
     return (
       <div id="message">

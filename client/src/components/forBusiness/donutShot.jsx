@@ -10,18 +10,18 @@ export default class donutShot extends Component {
         <Container>
           <Row>
             <Col md={12}>
-              <div class="Container-box">
+              <div className="Container-box">
                 <img className="Donut-img" src={ process.env.PUBLIC_URL + '/assets/img/Web 1920 – 61.png' } alt="Waste" />
-                <div class="Centered-text">
+                <div className="Centered-text">
                   <Row>
                     <Col md={12}>
                       <div className="Donut-header">Perhitungan supply dan demand pada industry makanan sulit dilakukan.</div>
                     </Col>
-                    <Col md={12}>
+                    <Col md={12} className="No-padding">
                       <div className="Donut-text">
-                        Memperkirakan demand makanan setiap hari, mingguan atau tahunan tidaklah mudah. 
-                        Faktanya, hal ini adalah salah satu penyebab utama sampah makanan di industri ini. 
-                        Makanan yang tidak terjual inilah yang bisa Anda jual di Dishkon.
+                        Memperkirakan demand makanan setiap hari, mingguan atau tahunan tidaklah mudah.&nbsp;
+                        <div className="Donut-text-inner">Faktanya, hal ini adalah salah satu penyebab utama sampah makanan di industri ini.</div>
+                        Makanan yang tidak terjual inilah yang bisa Anda jual di Dishkon. 
                       </div>
                     </Col>
                   </Row>

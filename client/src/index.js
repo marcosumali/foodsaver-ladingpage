@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import thunk from 'redux-thunk';
+import ReactGA from 'react-ga';
 
 import App from './App';
 import './index.css';
@@ -29,6 +30,9 @@ const store = createStore(
 );
 
 const history = createBrowserHistory();
+
+const TrackingID = process.env.REACT_APP_TRACKINGID
+ReactGA.initialize(TrackingID);
 
 ReactDOM.render(
   <Router history={history}>

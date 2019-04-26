@@ -5,10 +5,29 @@ import {
   Col
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 import './header.css';
 
 export default class header extends Component {
+  setEventAndroidDownload = () => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Click Download Android - Header',
+      label: 'Black',
+      nonInteraction: true
+    })
+  }
+
+  setEventAppleDownload = () => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Click Download IOS - Header',
+      label: 'Black',
+      nonInteraction: true
+    })
+  }
+
   render() {
     return (
       <div id="Header" className="Header-box">
@@ -33,12 +52,12 @@ export default class header extends Component {
                   <div className="Header-download">
                     <Row>
                       <Col sm={12} md={6} className="Container-wrap-center Header-download-box">
-                        <Link to="/register-user">
+                        <Link to="/register-user" onClick={ () => this.setEventAppleDownload() }>
                           <img src={ process.env.PUBLIC_URL + '/assets/img/Download_on_AppStore.png' } alt="Download-app-black" />
                         </Link>
                       </Col>
                       <Col sm={12} md={6} className="Container-wrap-center Header-download-box">
-                        <Link to="/register-user">
+                        <Link to="/register-user" onClick={ () => this.setEventAndroidDownload() }>
                           <img src={ process.env.PUBLIC_URL + '/assets/img/Download_on_GooglePlay.png' } alt="Download-app-black" />
                         </Link>
                       </Col>

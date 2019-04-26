@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import ReactGA from 'react-ga';
 
 import './register.css';
 import '../../assets/css/swal.css';
@@ -19,6 +20,10 @@ import {
 import LoadingSvg from '../../components/svg/loading';
 
 class registerCustomerPage extends Component {
+  componentDidMount() {
+    ReactGA.pageview('/register-customer');
+  }
+
   render() {
     let {
       handleCustomerInputChanges,
@@ -31,7 +36,7 @@ class registerCustomerPage extends Component {
       customerEmailError,
       loadingStatus,
     } = this.props
-    console.log('registerCustomerPage', this.props)
+    // console.log('registerCustomerPage', this.props)
     return (
       <div className="Register-page">
         <Container className="Height-100cent">

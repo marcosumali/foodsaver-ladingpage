@@ -5,6 +5,7 @@ import {
   Col
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 import './forBusiness.css';
 import GroceriesSvg from '../svg/groceries';
@@ -13,6 +14,42 @@ import CafeSvg from '../svg/cafes';
 import BakeriesSvg from '../svg/bakeries';
 
 export default class forBusiness extends Component {
+  setEventRegisterGroceries = () => {
+    ReactGA.event({
+      category: 'Customer',
+      action: 'Click Register - Groceries',
+      label: 'Groceries',
+      nonInteraction: true
+    })
+  }
+
+  setEventRegisterRestaurant = () => {
+    ReactGA.event({
+      category: 'Customer',
+      action: 'Click Register - Restaurant',
+      label: 'Restaurant',
+      nonInteraction: true
+    })
+  }
+
+  setEventRegisterCafe = () => {
+    ReactGA.event({
+      category: 'Customer',
+      action: 'Click Register - Cafe',
+      label: 'Cafe',
+      nonInteraction: true
+    })
+  }
+
+  setEventRegisterBakeries = () => {
+    ReactGA.event({
+      category: 'Customer',
+      action: 'Click Register - Bakeries',
+      label: 'Bakeries',
+      nonInteraction: true
+    })
+  }
+
   render() {
     return (
       <div id="Pengelola-bisnis">
@@ -62,7 +99,7 @@ export default class forBusiness extends Component {
                       </Row>
                       <Row>
                         <Col md={12} className="Container-nowrap-center">
-                          <Link to="/register-customer" style={{ textDecoration: 'none' }}>
+                          <Link to="/register-customer" style={{ textDecoration: 'none' }} onClick={ () => this.setEventRegisterGroceries() }>
                             <div className="Register-box">
                               <div className="Register-text">Daftar Gratis</div>
                             </div>
@@ -83,7 +120,7 @@ export default class forBusiness extends Component {
                       </Row>
                       <Row>
                         <Col md={12} className="Container-nowrap-center">
-                          <Link to="/register-customer" style={{ textDecoration: 'none' }}>
+                          <Link to="/register-customer" style={{ textDecoration: 'none' }} onClick={ () => this.setEventRegisterRestaurant() }>
                             <div className="Register-box">
                               <div className="Register-text">Daftar Gratis</div>
                             </div>
@@ -104,7 +141,7 @@ export default class forBusiness extends Component {
                       </Row>
                       <Row>
                         <Col md={12} className="Container-nowrap-center">
-                          <Link to="/register-customer" style={{ textDecoration: 'none' }}>
+                          <Link to="/register-customer" style={{ textDecoration: 'none' }} onClick={ () => this.setEventRegisterCafe() }>
                             <div className="Register-box">
                               <div className="Register-text">Daftar Gratis</div>
                             </div>
@@ -125,7 +162,7 @@ export default class forBusiness extends Component {
                       </Row>
                       <Row>
                         <Col md={12} className="Container-nowrap-center">
-                          <Link to="/register-customer" style={{ textDecoration: 'none' }}>
+                          <Link to="/register-customer" style={{ textDecoration: 'none' }} onClick={ () => this.setEventRegisterBakeries() }>
                             <div className="Register-box">
                               <div className="Register-text">Daftar Gratis</div>
                             </div>
