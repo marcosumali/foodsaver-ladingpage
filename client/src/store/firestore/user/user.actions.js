@@ -1,5 +1,6 @@
 import { validateEmail } from '../../../helpers/form';
 import swal from 'sweetalert';
+import ReactGA from 'react-ga';
 
 export const emptyError = 'Bagian ini harus diisi.'
 export const emailInvalidError = 'Format email tidak benar.'
@@ -101,17 +102,29 @@ export const createNewUser = (name, email) => {
     let userRef = firestore.collection('user')
 
     userRef.add(newUser)
-      .then(() => {
-        dispatch(setLoadingStatus(false))
-        dispatch(setUserName(''))
-        dispatch(setUserNameInputError(false))
-        dispatch(setUserEmail(''))
-        dispatch(setUserEmailInputError(false))
-        swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
+      .then(async () => {
+        await ReactGA.ga('send', {
+          hitType: 'event',
+          eventCategory: 'Register',
+          eventAction: 'User Registration Successful',
+          eventLabel: 'Goal'
+        })
+        await dispatch(setUserName(''))
+        await dispatch(setUserNameInputError(false))
+        await dispatch(setUserEmail(''))
+        await dispatch(setUserEmailInputError(false))
+        await swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
+        await dispatch(setLoadingStatus(false))
       })
-      .catch(err => {
-        dispatch(setLoadingStatus(false))
-        swal("ERROR !", "Silahkan hubungi tim support kami", "error");
+      .catch(async err => {
+        await ReactGA.ga('send', {
+          hitType: 'event',
+          eventCategory: 'Register',
+          eventAction: 'User Registration Error',
+          eventLabel: err
+        })
+        await swal("ERROR !", "Silahkan hubungi tim support kami", "error");
+        await dispatch(setLoadingStatus(false))
       })
   }
 }
