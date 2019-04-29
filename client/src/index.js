@@ -2,16 +2,43 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import { Router } from 'react-router-dom';
-import { createBrowserHistory } from "history";
+import { createBrowserHistory } from 'history';
+import { createStore, applyMiddleware, compose } from 'redux'
+import { Provider } from 'react-redux'
+import { reduxFirestore, getFirestore } from 'redux-firestore';
+import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
+import thunk from 'redux-thunk';
+import ReactGA from 'react-ga';
 
 import App from './App';
 import './index.css';
+import allReducers from './store';
+import firebaseConfig from './configs/firebase.config';
+
+const rrfConfig = {
+  useFirestoreForProfile: false,
+  userProfile: 'user', 
+}
+
+const store = createStore(
+  allReducers,
+  compose(
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    reduxFirestore(firebaseConfig),
+    reactReduxFirebase(firebaseConfig, rrfConfig)
+  )
+);
 
 const history = createBrowserHistory();
 
+const TrackingID = process.env.REACT_APP_TRACKINGID
+ReactGA.initialize(TrackingID);
+
 ReactDOM.render(
   <Router history={history}>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </Router>
   , document.getElementById('root')
 );
