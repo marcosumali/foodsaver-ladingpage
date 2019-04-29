@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ReactGA from 'react-ga';
+import { Helmet } from "react-helmet";
 
 import './register.css';
 import '../../assets/css/swal.css';
@@ -39,6 +40,13 @@ class registerCustomerPage extends Component {
     // console.log('registerCustomerPage', this.props)
     return (
       <div className="Register-page">
+        <Helmet>
+          <title>Daftarkan Bisnis Anda | Dishkon</title>
+          <meta
+            name="description"
+            content="Segera daftar akun Dishkon untuk mengurangi makanan surplus bisnis Anda dengan harga diskon. Kami yang menangani logistik dan pembayaran dari konsumen."
+          />
+        </Helmet>
         <Container className="Height-100cent">
           <Row>
             <Col md={12} className="Regisration-logo-box Container-nowrap-center">

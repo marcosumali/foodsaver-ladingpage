@@ -10,6 +10,11 @@
   padding-bottom: 6em;
 }
 
+.Registration-inner-box {
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
 .Registration-header {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
