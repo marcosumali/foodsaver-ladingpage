@@ -44,7 +44,7 @@ const setBusinessName = (data) => {
 }
 
 // To validate input form of inputting customer information
-export const customerRegisterInputValidation = (props) => {
+export const customerRegisterInputValidation = (props, window) => {
   return async (dispatch, getState, { getFirebase, getFirestore }) => {
     let name = props.customerName.toLowerCase()
     let businessName = props.businessName.toLowerCase()
@@ -83,7 +83,7 @@ export const customerRegisterInputValidation = (props) => {
 
     if (name.length > 0 && businessName.length > 0 && email.length > 0 && validateEmail(email) === true ) {
       await dispatch(setLoadingStatus(true))
-      await dispatch(createNewCustomer(name, businessName, email))
+      await dispatch(createNewCustomer(name, businessName, email, window))
     }
   }
 }
@@ -118,10 +118,11 @@ const setLoadingStatus = (data) => {
 }
 
 // To validate input form of inputting customer information
-export const createNewCustomer = (name, businessName, email) => {
+export const createNewCustomer = (name, businessName, email, window) => {
   return async (dispatch, getState, { getFirebase, getFirestore }) => {
+    let createdDate = new Date(Date.now())
     let newCustomer = {
-      name, businessName, email
+      name, businessName, email, createdDate
     }
     let firestore = getFirestore()
     let customerRef = firestore.collection('customer')
@@ -140,8 +141,9 @@ export const createNewCustomer = (name, businessName, email) => {
         await dispatch(setBusinessNameInputError(false))
         await dispatch(setCustomerEmail(''))
         await dispatch(setCustomerEmailInputError(false))
-        swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
         await dispatch(setLoadingStatus(false))
+        await window.location.assign(`/register-customer-success`)
+        // swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
       })
       .catch(async err => {
         await ReactGA.ga('send', {

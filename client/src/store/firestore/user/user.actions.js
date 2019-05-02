@@ -35,7 +35,7 @@ const setUserEmail = (data) => {
 }
 
 // To validate input form of inputting user information
-export const userRegisterInputValidation = (props) => {
+export const userRegisterInputValidation = (props, window) => {
   return async (dispatch, getState, { getFirebase, getFirestore }) => {
     let name = props.userName.toLowerCase()
     let email = props.userEmail
@@ -65,7 +65,7 @@ export const userRegisterInputValidation = (props) => {
 
     if (name.length > 0 && email.length > 0 && validateEmail(email) === true ) {
       await dispatch(setLoadingStatus(true))
-      await dispatch(createNewUser(name, email))
+      await dispatch(createNewUser(name, email, window))
     }
   }
 }
@@ -93,10 +93,11 @@ const setLoadingStatus = (data) => {
 }
 
 // To validate input form of inputting user information
-export const createNewUser = (name, email) => {
+export const createNewUser = (name, email, window) => {
   return async (dispatch, getState, { getFirebase, getFirestore }) => {
+    let createdDate = new Date(Date.now())
     let newUser = {
-      name, email
+      name, email, createdDate
     }
     let firestore = getFirestore()
     let userRef = firestore.collection('user')
@@ -113,8 +114,9 @@ export const createNewUser = (name, email) => {
         await dispatch(setUserNameInputError(false))
         await dispatch(setUserEmail(''))
         await dispatch(setUserEmailInputError(false))
-        await swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
         await dispatch(setLoadingStatus(false))
+        await window.location.assign(`/register-user-success`)
+        // await swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
       })
       .catch(async err => {
         await ReactGA.ga('send', {
