@@ -6,14 +6,23 @@
 }
 
 .Business-header-box {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+}
+
+.Business-header-center {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5vh;
+  color: #F45087;
+  font-weight: bold;
+  text-align: center;
 }
 
 .Business-header {
   font-family: 'Montserrat', sans-serif;
-  font-size: 5vh;
-  text-align: center;
+  font-size: 2.5vh;
   color: #F45087;
+  font-weight: bold;
+  /* text-align: center; */
 }
 
 .Business-header1-box {
@@ -22,9 +31,9 @@
 
 .Business-header1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.25vh;
-  text-align: center;
+  font-size: 2vh;
   color: #F45087;
+  /* text-align: center; */
 }
 
 .Business-desc-box {
@@ -94,6 +103,10 @@
 .Donut-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 2vh;
+}
+
+.Video-box {
+  margin-bottom: 2em;
 }
 
 @media only screen and (max-width: 600px) {

@@ -44,7 +44,7 @@ class registerCustomerPage extends Component {
           <title>Daftarkan Bisnis Anda | Dishkon</title>
           <meta
             name="description"
-            content="Segera daftar akun Dishkon untuk mengurangi makanan surplus bisnis Anda dengan harga diskon. Kami yang menangani logistik dan pembayaran dari konsumen."
+            content="Segera daftar akun Dishkon untuk mengurangi kelebihan makanan bisnis Anda dengan harga diskon. Kami yang menangani logistik dan pembayaran dari konsumen."
           />
         </Helmet>
         <Container className="Height-100cent">
