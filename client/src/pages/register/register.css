@@ -7,7 +7,7 @@
   background-color: #ffffff;
   border-radius: 25px;
   padding: 4em;
-  padding-bottom: 6em;
+  /* padding-bottom: 6em; */
 }
 
 .Registration-inner-box {
@@ -18,7 +18,7 @@
 .Registration-header {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 4vh;
+  font-size: 3vh;
   font-weight: bold;
   margin-bottom: 1em;
 }
@@ -48,6 +48,31 @@
   margin-right: 4em;
 }
 
+/* -------------------- SUCCESS PAGE -------------------- */
+.Success-header, .Success-paragraphs {
+  display: block;
+  margin-bottom: 1.25em;
+}
+
+.Success-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75vh;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.Registration-header-success {
+  font-family: 'Montserrat', sans-serif;
+  /* text-align: center; */
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #F45087;
+}
+
+.Sincere-margin {
+  margin-bottom: 2em;
+}
 
 @media only screen and (max-width: 600px) {
   .Registration-margin {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   Container,
   Row,
-  Col
+  Col,
+  Media
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactGA from 'react-ga';
@@ -50,6 +51,7 @@ export default class forBusiness extends Component {
     })
   }
 
+
   render() {
     return (
       <div id="Pengelola-bisnis">
@@ -58,31 +60,35 @@ export default class forBusiness extends Component {
             <Col md={12} className="Business-box">
               <Row>
                 <Col md={12} className="Business-header-box">
-                  <div className="Business-header">Untuk Pengelola Bisnis Makanan</div>
+                  <div className="Business-header-center">Untuk Pengelola Bisnis Makanan</div>
+                </Col>
+                <Col md={12} className="Business-header-box">
+                  <div className="Business-header">Putarlah video 1 menit ini untuk tahu seberapa mudah cara upload makanan yang tidak terjual dalam hitungan detik.</div>
                 </Col>
               </Row>
               <Row>
                 <Col md={12} className="Business-header1-box">
-                  <div className="Business-header1">Jadilah pemimpin dalam bisnis makanan tanpa sisa makanan sekaligus menghasilkan keuntungan dengan tiga cara mudah.</div>
+                  <div className="Business-header1">Ingin tahu seperti apa di dalam aplikasi Dishkon? Dalam panduan 1 menit ini, Anda akan belajar cara mengunggah kelebihan makanan Anda dan melihat semua fitur hebat yang dapat Anda akses.</div>
                 </Col>
               </Row>
-              <div className="Business-detail-box">
-                <Row>
-                  <Col md={12} className="Business-desc-box">
-                    <div className="Business-desc">1. Upload makanan surplus yang mau Anda jual dengan harga diskon.</div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={12} className="Business-desc-box">
-                    <div className="Business-desc">2. Customer bisa pick up ke tempat Anda atau delivery oleh partner kami setelah melakukan pembayaran melalui aplikasi.</div>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={12} className="Business-desc-box">
-                    <div className="Business-desc">3. Terima pembayaran dan laporan bulanan atas makanan surplus yang berhasil Anda jual.</div>
-                  </Col>
-                </Row>
-              </div>
+              <Row className="Video-box">
+                <Col md={12}>
+                  <Media>
+                    <div className="embed-responsive embed-responsive-16by9">
+                      <iframe 
+                        title="How to sell foods" 
+                        className="embed-responsive-item" 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube.com/embed/gbiCn0T9hA8" 
+                        frameBorder="0" 
+                        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                      />
+                    </div>
+                  </Media>
+                </Col>
+              </Row>
               <Row>
                 <Col md={12}>
                   <Row>
