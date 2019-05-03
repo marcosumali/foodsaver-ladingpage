@@ -8,6 +8,7 @@ export const emailInvalidError = 'Format email tidak benar.'
 // To handle customer input changes
 export const handleCustomerInputChanges = (e) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
+    // e.preventDefault()
     let target = e.target
     let inputId = target.id
     let value = target.value

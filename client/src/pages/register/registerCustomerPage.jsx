@@ -40,13 +40,15 @@ class registerCustomerPage extends Component {
     // console.log('registerCustomerPage', this.props)
     return (
       <div className="Register-page">
-        <Helmet>
-          <title>Daftarkan Bisnis Anda | Dishkon</title>
-          <meta
-            name="description"
-            content="Segera daftar akun Dishkon untuk mengurangi kelebihan makanan bisnis Anda dengan harga diskon. Kami yang menangani logistik dan pembayaran dari konsumen."
-          />
-        </Helmet>
+        <Helmet
+          title="Daftarkan Bisnis Anda | Dishkon"
+          meta={[
+            {
+              name: 'description',
+              content: 'Segera daftar akun Dishkon untuk mengurangi kelebihan makanan bisnis Anda dengan harga diskon. Kami yang menangani logistik dan pembayaran dari konsumen.',
+            },
+          ]}
+        />
         <Container className="Height-100cent">
           <Row>
             <Col md={12} className="Regisration-logo-box Container-nowrap-center">

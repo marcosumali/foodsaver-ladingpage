@@ -18,13 +18,15 @@ export default class homePage extends Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <title>Kurangi Sampah Makanan Dengan Dishkon</title>
-          <meta
-            name="description"
-            content="Aplikasi yang bantu kamu selamatkan makanan yang tidak terjual agar tidak menjadi sampah makanan dengan harga diskon. Download Dishkon sekarang."
-          />
-        </Helmet>
+        <Helmet
+          title="Kurangi Sampah Makanan Dengan Dishkon"
+          meta={[
+            {
+              name: 'description',
+              content: 'Aplikasi yang bantu kamu selamatkan makanan yang tidak terjual agar tidak menjadi sampah makanan dengan harga diskon. Download Dishkon sekarang.',
+            },
+          ]}
+        />
         <NavigationBar />
         <Header />
         <ProblemPage />

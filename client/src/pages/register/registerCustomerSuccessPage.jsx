@@ -21,9 +21,9 @@ class registerSuccessPage extends Component {
   render() {
     return (
       <div className="Register-page">
-        <Helmet>
-          <title>Kurangi Sampah Makanan Dengan Dishkon</title>
-        </Helmet>
+        <Helmet
+          title="Kurangi Sampah Makanan Dengan Dishkon"
+        />
         <Container className="Height-100cent">
           <Row>
             <Col md={12} className="Regisration-logo-box Container-nowrap-center">
