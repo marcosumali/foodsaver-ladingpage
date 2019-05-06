@@ -131,3 +131,41 @@ export const createNewUser = (name, email, window) => {
       })
   }
 }
+
+
+// To extract users data
+export const getUsers = () => {
+  return async (dispatch, getState, { getFirebase, getFirestore }) => {
+    let firestore = getFirestore()
+    let userRef = firestore.collection('user')
+
+    userRef
+    .get()
+    .then(snapshot => {
+      if (snapshot.empty) {
+        console.log('No matching documents.')
+      } else {
+        let users = []
+        snapshot.forEach(doc => {
+          let data = doc.data()
+          let user = {
+            id: doc.id,
+            ...data
+          }
+          users.push(user)
+        })
+
+        let stringUsers = ''
+        users.map(user => {
+          stringUsers = stringUsers + `${user.id},${user.name},${user.email},${user.createdDate} \n`
+          return ''
+        })
+
+        // console.log('=>', stringUsers)
+      }
+    })
+    .catch(err => {
+      console.log('ERROR: get users', err)
+    });
+  }
+}
