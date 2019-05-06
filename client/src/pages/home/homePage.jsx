@@ -15,7 +15,7 @@ import { getUsers } from '../../store/firestore/user/user.actions';
 
 class homePage extends Component {
   componentWillMount() {
-    // Only to get users data
+    // // Only live when getting users data
     // this.props.getUsers()
   }
 

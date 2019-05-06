@@ -148,19 +148,22 @@ export const getUsers = () => {
         let users = []
         snapshot.forEach(doc => {
           let data = doc.data()
-          let user = {
-            id: doc.id,
-            ...data
+          if (data.test === undefined) {
+            let user = {
+              id: doc.id,
+              createdDate: new Date(data.createdDate.toDate()).toString(),
+              email: data.email,
+              name: data.name,
+            }
+            users.push(user)
           }
-          users.push(user)
         })
 
         let stringUsers = ''
         users.map(user => {
-          stringUsers = stringUsers + `${user.id},${user.name},${user.email},${user.createdDate} \n`
+          stringUsers = stringUsers + `${user.id},${user.name},${user.email},${user.createdDate}\n`
           return ''
         })
-
         // console.log('=>', stringUsers)
       }
     })
