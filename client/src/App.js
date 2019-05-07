@@ -7,6 +7,8 @@ import RegisterUserPage from './pages/register/registerUserPage';
 import RegisterCustomerPage from './pages/register/registerCustomerPage';
 import RegisterUserSuccessPage from './pages/register/registerUserSuccessPage';
 import RegisterCustSuccessPage from './pages/register/registerCustomerSuccessPage';
+import RegisterAvengerPage from './pages/register/registerAvengerPage';
+import RegisterAvengerSuccessPage from './pages/register/registerAvengerSuccessPage';
 
 class App extends Component {
   render() {
@@ -33,6 +35,15 @@ class App extends Component {
             exact path="/register-customer-success" 
             render={ (props) => (<RegisterCustSuccessPage {...props} />) } 
           />
+          <Route
+            exact path="/avengers-assemble/:id" 
+            render={ (props) => (<RegisterAvengerPage {...props} />) } 
+          />
+          <Route
+            exact path="/avengers-assemble-success/:id" 
+            render={ (props) => (<RegisterAvengerSuccessPage {...props} />) } 
+          />
+          <Route path="/error" component={ ErrorPage } />
           <Route path="*" component={ ErrorPage } />
         </Switch>
       </div>

@@ -4,6 +4,7 @@ let initialState = {
   registerUserNameError: false,
   registerUserEmailError: false,
   registerLoadingStatus: false,
+  existanceStatus: true,
 }
 
 const userDataList = (state = { ...initialState }, action) => {
@@ -32,6 +33,11 @@ const userDataList = (state = { ...initialState }, action) => {
       return ({
         ...state,
         registerLoadingStatus: action.payload
+      })
+    case 'SET_USER_EXIST_ERROR':
+      return ({
+        ...state,
+        existanceStatus: action.payload
       })
     default:
       return state;

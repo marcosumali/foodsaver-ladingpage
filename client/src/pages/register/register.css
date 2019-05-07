@@ -54,6 +54,10 @@
   margin-bottom: 1.25em;
 }
 
+.Success-header {
+  text-transform: capitalize;
+}
+
 .Success-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.75vh;
