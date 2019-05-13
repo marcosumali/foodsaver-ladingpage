@@ -143,12 +143,14 @@ export const getUsers = () => {
   return async (dispatch, getState, { getFirebase, getFirestore }) => {
     let firestore = getFirestore()
     let userRef = firestore.collection('user')
-
+    
     userRef
+    .where('createdDate', '>=', new Date('2019-05-09'))
+    // .where('createdDate', '<=', new Date('2019-05-10'))
     .get()
     .then(snapshot => {
       if (snapshot.empty) {
-        // console.log('No matching documents.')
+        console.log('No matching documents.')
       } else {
         let users = []
         snapshot.forEach(doc => {
@@ -164,12 +166,14 @@ export const getUsers = () => {
           }
         })
 
+        console.log('=> length', users.length)
+
         let stringUsers = ''
         users.map(user => {
           stringUsers = stringUsers + `${user.id},${user.name},${user.email},${user.createdDate}\n`
           return ''
         })
-        // console.log('=>', stringUsers)
+        console.log('=>', stringUsers)
       }
     })
     .catch(err => {

@@ -48,6 +48,16 @@
   margin-right: 4em;
 }
 
+.Label-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  color: lightgray;
+}
+
+.Label-gray {
+  color: lightgray;
+}
+
 /* -------------------- SUCCESS PAGE -------------------- */
 .Success-header, .Success-paragraphs {
   display: block;

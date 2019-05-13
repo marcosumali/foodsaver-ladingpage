@@ -2,9 +2,12 @@ let initialState = {
   customerName: '',
   businessName: '',
   customerEmail: '',
+  whatsapp: '',
+  website: '',
   registerCustomerNameError: false,
   registerBusinessNameError: false,
   registerCustomerEmailError: false,
+  registerCustomerWhatsappError: false,
   registerLoadingStatus: false,
 }
 
@@ -25,6 +28,16 @@ const customerDataList = (state = { ...initialState }, action) => {
         ...state,
         customerEmail: action.payload
       })
+    case 'SET_CUST_WHATSAPP':
+      return ({
+        ...state,
+        whatsapp: action.payload
+      })
+    case 'SET_CUST_WEBSITE':
+      return ({
+        ...state,
+        website: action.payload
+      })
     case 'SET_REGISTER_CUST_NAME_ERROR':
       return ({
         ...state,
@@ -39,6 +52,11 @@ const customerDataList = (state = { ...initialState }, action) => {
       return ({
         ...state,
         registerCustomerEmailError: action.payload
+      })
+    case 'SET_REGISTER_CUST_WHATSAPP_ERROR':
+      return ({
+        ...state,
+        registerCustomerWhatsappError: action.payload
       })
     case 'SET_REGISTER_CUST_LOADING_STATUS':
       return ({
