@@ -36,6 +36,9 @@ class registerCustomerPage extends Component {
       businessNameError,
       customerEmailError,
       loadingStatus,
+      customerWhatsapp,
+      customerWebsite,
+      customerWhatsappError,
     } = this.props
     // console.log('registerCustomerPage', this.props)
     return (
@@ -57,7 +60,7 @@ class registerCustomerPage extends Component {
           </Row>
           <Row className="Container-nowrap-center">
             <Col md={12} className="Registration-box">
-              <Row>
+              <Row className="Max-box">
                 <Col md={12}>
                   <div className="Registration-header">Silahkan Isi Formulir Untuk Daftarkan Bisnis Anda</div>
                 </Col>
@@ -119,6 +122,39 @@ class registerCustomerPage extends Component {
                         </Form.Text>
                       }
                     </Form.Group>
+
+                    <Form.Group>
+                      <Form.Label>Nomor Whatsapp</Form.Label>
+                      <Form.Control 
+                        id="whatsapp" 
+                        type="text" 
+                        placeholder="Nomor Whatsapp Anda" 
+                        onChange={ (e) => handleCustomerInputChanges(e) }
+                        value={ customerWhatsapp }
+                      />
+                      {
+                        customerWhatsappError === false ?
+                        <div></div>
+                        :
+                        <Form.Text className="text-muted">
+                          { customerWhatsappError }
+                        </Form.Text>
+                      }
+                    </Form.Group>
+
+                    <Form.Group>
+                      <Form.Label>Website Anda <span className="Label-gray">(Opsional)</span></Form.Label>
+                      <Form.Control 
+                        id="website" 
+                        type="text" 
+                        placeholder="Alamat Website Anda" 
+                        onChange={ (e) => handleCustomerInputChanges(e) }
+                        value={ customerWebsite }
+                      />
+                      <Form.Text className="Label-text">
+                        Cth: Website, Facebook, Instagram bisnis Anda atau jejak digital lain supaya kami lebih bisa memahami bisnis Anda
+                      </Form.Text>
+                    </Form.Group>
                     
                     {
                       loadingStatus ?
@@ -153,6 +189,9 @@ const mapStateToProps = state => {
     customerEmail: state.cust.customerEmail,
     customerEmailError: state.cust.registerCustomerEmailError,
     loadingStatus: state.cust.registerLoadingStatus,
+    customerWhatsapp: state.cust.whatsapp,
+    customerWhatsappError: state.cust.registerCustomerWhatsappError,
+    customerWebsite: state.cust.website,
   }
 }
 

@@ -34,7 +34,7 @@ class registerSuccessPage extends Component {
             <Col md={12} className="Registration-box">
               <Row className="Registration-inner-box">
                 <Col md={12}>
-                  <div className="Registration-header-success">Aplikasi kami akan segera hadir !</div>
+                  <div className="Registration-header-success">Terima kasih !</div>
                 </Col>
                 <Col md={12}>
                   <div className="Success-text">
@@ -42,11 +42,11 @@ class registerSuccessPage extends Component {
 
                     <div className="Success-paragraphs">
                       Terima kasih sudah mendaftarkan bisnis Anda pada kami, aplikasi penyelamat makanan pertama di Indonesia. 
-                      Maaf, tapi produk ini belum tersedia saat ini dan sedang dalam tahap penelitian dan pengembangan.
+                      Tim kami akan segera menghubungi Anda untuk informasi kerja sama lebih lanjut.
                     </div>
 
                     <div className="Success-paragraphs">
-                      Misi kami adalah untuk mengurangi jumlah sampah makanan di Indonesia dengan cara mendistribusikan makanan yang tidak terjual langsung ke konsumen dengan harga diskon sebelum kadaluwarsa sehingga Anda akan mendapatkan manfaat maksimal dari setiap makanan yang Anda masak.
+                      Misi sederhana kami adalah untuk mengurangi jumlah sampah makanan di Indonesia dengan cara mendistribusikan makanan yang tidak terjual dan layak makan langsung ke konsumen dengan harga diskon sebelum kadaluwarsa sehingga Anda akan mendapatkan manfaat maksimal dari setiap makanan yang sudah Anda masak.
                       Jika Anda ingin terlibat dalam perkembangan atau jika Anda memiliki pertanyaan, silakan hubungi kami di <a style={{ color: '#F45087', textDecoration: 'underline' }} href="mailto:support@dishkon.co">support@dishkon.co</a>.
                     </div>
 

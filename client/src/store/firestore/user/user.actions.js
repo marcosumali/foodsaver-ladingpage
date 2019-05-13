@@ -2,6 +2,11 @@ import { validateEmail } from '../../../helpers/form';
 import swal from 'sweetalert';
 import ReactGA from 'react-ga';
 
+import {
+  setAvengerName,
+  setAvengerEmail
+} from '../avenger/avenger.actions';
+
 export const emptyError = 'Bagian ini harus diisi.'
 export const emailInvalidError = 'Format email tidak benar.'
 
@@ -104,30 +109,106 @@ export const createNewUser = (name, email, window) => {
     let userRef = firestore.collection('user')
 
     userRef.add(newUser)
-      .then(async () => {
-        await ReactGA.ga('send', {
-          hitType: 'event',
-          eventCategory: 'Register',
-          eventAction: 'User Registration Successful',
-          eventLabel: 'Goal'
-        })
-        await dispatch(setUserName(''))
-        await dispatch(setUserNameInputError(false))
-        await dispatch(setUserEmail(''))
-        await dispatch(setUserEmailInputError(false))
-        await dispatch(setLoadingStatus(false))
-        await window.location.assign(`/register-user-success`)
-        // await swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
+    .then(async () => {
+      await ReactGA.ga('send', {
+        hitType: 'event',
+        eventCategory: 'Register',
+        eventAction: 'User Registration Successful',
+        eventLabel: 'Goal'
       })
-      .catch(async err => {
-        await ReactGA.ga('send', {
-          hitType: 'event',
-          eventCategory: 'Register',
-          eventAction: 'User Registration Error',
-          eventLabel: err
-        })
-        await swal("ERROR !", "Silahkan hubungi tim support kami", "error");
-        await dispatch(setLoadingStatus(false))
+      await dispatch(setUserName(''))
+      await dispatch(setUserNameInputError(false))
+      await dispatch(setUserEmail(''))
+      await dispatch(setUserEmailInputError(false))
+      await dispatch(setLoadingStatus(false))
+      await window.location.assign(`/register-user-success`)
+      // await swal("Registrasi Berhasil !", "Kami akan menyampaikan perkembangan aplikasi kami melalui email. Stay tune !", "success");
+    })
+    .catch(async err => {
+      await ReactGA.ga('send', {
+        hitType: 'event',
+        eventCategory: 'Register',
+        eventAction: 'User Registration Error',
+        eventLabel: err
       })
+      await swal("ERROR !", "Silahkan hubungi tim support kami", "error");
+      await dispatch(setLoadingStatus(false))
+    })
+  }
+}
+
+
+// To extract users data
+export const getUsers = () => {
+  return async (dispatch, getState, { getFirebase, getFirestore }) => {
+    let firestore = getFirestore()
+    let userRef = firestore.collection('user')
+    
+    userRef
+    .where('createdDate', '>=', new Date('2019-05-09'))
+    // .where('createdDate', '<=', new Date('2019-05-10'))
+    .get()
+    .then(snapshot => {
+      if (snapshot.empty) {
+        console.log('No matching documents.')
+      } else {
+        let users = []
+        snapshot.forEach(doc => {
+          let data = doc.data()
+          if (data.test === undefined) {
+            let user = {
+              id: doc.id,
+              createdDate: new Date(data.createdDate.toDate()).toString(),
+              email: data.email,
+              name: data.name,
+            }
+            users.push(user)
+          }
+        })
+
+        console.log('=> length', users.length)
+
+        let stringUsers = ''
+        users.map(user => {
+          stringUsers = stringUsers + `${user.id},${user.name},${user.email},${user.createdDate}\n`
+          return ''
+        })
+        console.log('=>', stringUsers)
+      }
+    })
+    .catch(err => {
+      console.log('ERROR: get users')
+    });
+  }
+}
+
+// To extract user data
+export const getUser = (id) => {
+  return async (dispatch, getState, { getFirebase, getFirestore }) => {
+    let firestore = getFirestore()
+    let userRef = firestore.collection('user').doc(id)
+
+    userRef
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        // console.log('No such document!')
+        dispatch(setUserExistError(false))
+      } else {
+        let data = doc.data()
+        dispatch(setAvengerName(data.name))
+        dispatch(setAvengerEmail(data.email))
+      }
+    })
+    .catch(err => {
+      console.log('ERROR: get user')
+    });
+  }
+}
+
+const setUserExistError = (data) => {
+  return {
+    type: 'SET_USER_EXIST_ERROR',
+    payload: data
   }
 }

@@ -48,10 +48,29 @@
   margin-right: 4em;
 }
 
+.Label-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  color: lightgray;
+}
+
+.Label-gray {
+  color: lightgray;
+}
+
+.Max-box {
+  overflow-y: scroll;
+  max-height: 55vh;
+}
+
 /* -------------------- SUCCESS PAGE -------------------- */
 .Success-header, .Success-paragraphs {
   display: block;
   margin-bottom: 1.25em;
+}
+
+.Success-header {
+  text-transform: capitalize;
 }
 
 .Success-text {

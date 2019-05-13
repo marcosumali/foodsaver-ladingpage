@@ -47,7 +47,7 @@ class registerSuccessPage extends Component {
                     </div>
 
                     <div className="Success-paragraphs">
-                      Misi kami adalah untuk mengurangi jumlah sampah makanan di Indonesia dengan cara mendistribusikan makanan yang tidak terjual langsung ke konsumen dengan harga diskon sebelum kadaluwarsa.
+                      Misi kami adalah untuk mengurangi jumlah sampah makanan di Indonesia dengan cara mendistribusikan makanan yang tidak terjual dan layak makan langsung ke konsumen dengan harga diskon sebelum kadaluwarsa.
                       Jika kamu ingin terlibat dalam perkembangan atau jika kamu memiliki pertanyaan, silakan hubungi kami di <a style={{ color: '#F45087', textDecoration: 'underline' }} href="mailto:support@dishkon.co">support@dishkon.co</a>.
                     </div>
 
