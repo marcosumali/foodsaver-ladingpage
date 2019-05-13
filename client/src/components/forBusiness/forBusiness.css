@@ -11,7 +11,7 @@
 
 .Business-header-center {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
+  font-size: 5vh;
   color: #F45087;
   font-weight: bold;
   text-align: center;
@@ -22,7 +22,7 @@
   font-size: 2.5vh;
   color: #F45087;
   font-weight: bold;
-  /* text-align: center; */
+  text-align: justify;
 }
 
 .Business-header1-box {
@@ -33,7 +33,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 2vh;
   color: #F45087;
-  /* text-align: center; */
+  text-align: justify;
 }
 
 .Business-desc-box {

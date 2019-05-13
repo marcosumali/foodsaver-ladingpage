@@ -58,6 +58,11 @@
   color: lightgray;
 }
 
+.Max-box {
+  overflow-y: scroll;
+  max-height: 55vh;
+}
+
 /* -------------------- SUCCESS PAGE -------------------- */
 .Success-header, .Success-paragraphs {
   display: block;

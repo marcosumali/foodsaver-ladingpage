@@ -11,7 +11,7 @@ export default class donutShot extends Component {
           <Row>
             <Col md={12}>
               <div className="Container-box">
-                <img className="Donut-img" src={ process.env.PUBLIC_URL + '/assets/img/Web 1920 – 61.png' } alt="Waste" />
+                <img className="Donut-img" src={ process.env.PUBLIC_URL + '/assets/img/donut-shot.png' } alt="Waste" />
                 <div className="Centered-text">
                   <Row>
                     <Col md={12}>

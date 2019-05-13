@@ -60,7 +60,7 @@ class registerCustomerPage extends Component {
           </Row>
           <Row className="Container-nowrap-center">
             <Col md={12} className="Registration-box">
-              <Row>
+              <Row className="Max-box">
                 <Col md={12}>
                   <div className="Registration-header">Silahkan Isi Formulir Untuk Daftarkan Bisnis Anda</div>
                 </Col>
