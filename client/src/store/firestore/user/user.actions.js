@@ -59,7 +59,6 @@ export const userRegisterInputValidation = (props, window) => {
       await dispatch(setUserEmailInputError(emailInvalidError))
     }
 
-
     // Input is OK
     if (name.length > 0) {
       await dispatch(setUserNameInputError(false))
@@ -145,7 +144,7 @@ export const getUsers = () => {
     let userRef = firestore.collection('user')
     
     userRef
-    .where('createdDate', '>=', new Date('2019-05-09'))
+    .where('createdDate', '>=', new Date('2019-05-17'))
     // .where('createdDate', '<=', new Date('2019-05-10'))
     .get()
     .then(snapshot => {
