@@ -321,3 +321,54 @@ const setRegisteredStatus = (data) => {
     payload: data
   }
 }
+
+
+// To extract avengers data
+export const getAvengers = () => {
+  return async (dispatch, getState, { getFirebase, getFirestore }) => {
+    let firestore = getFirestore()
+    let avengerRef = firestore.collection('avenger')
+    
+    avengerRef
+    .where('createdDate', '>=', new Date('2019-05-19'))
+    // .where('createdDate', '<=', new Date('2019-05-10'))
+    .get()
+    .then(snapshot => {
+      if (snapshot.empty) {
+        console.log('No matching documents.')
+      } else {
+        let users = []
+        snapshot.forEach(doc => {
+          let data = doc.data()
+          if (data.test === undefined) {
+            let user = {
+              id: doc.id,
+              createdDate: new Date(data.createdDate.toDate()).toString(),
+              email: data.email,
+              name: data.name,
+              city: data.city,
+              dobDate: data.dobDate,
+              dobMonth: data.dobMonth,
+              dobYear: data.dobYear,
+              gender: data.gender,
+              whatsapp: data.whatsapp,
+            }
+            users.push(user)
+          }
+        })
+
+        console.log('=> length', users.length)
+
+        let stringUsers = ''
+        users.map(user => {
+          stringUsers = stringUsers + `${user.id},${user.name},${user.email},${user.whatsapp},${user.gender},${user.city},${user.dobDate},${user.dobMonth},${user.dobYear},${user.createdDate}\n`
+          return ''
+        })
+        console.log('=>', stringUsers)
+      }
+    })
+    .catch(err => {
+      console.log('ERROR: get avengers')
+    });
+  }
+}
