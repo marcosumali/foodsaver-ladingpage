@@ -12,11 +12,13 @@ import WastePage from '../../components/forBusiness/donutShot';
 import ForBusinessPage from '../../components/forBusiness/forBusiness';
 import Footer from '../../components/footer/footer';
 import { getUsers } from '../../store/firestore/user/user.actions';
+import { getAvengers } from '../../store/firestore/avenger/avenger.actions';
 
 class homePage extends Component {
   componentWillMount() {
     // // Only live when getting users data
     // this.props.getUsers()
+    // this.props.getAvengers()
   }
 
   componentDidMount() {
@@ -54,6 +56,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getUsers,
+  getAvengers,
 }, dispatch)
 
 
