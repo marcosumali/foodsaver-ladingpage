@@ -330,7 +330,7 @@ export const getAvengers = () => {
     let avengerRef = firestore.collection('avenger')
     
     avengerRef
-    .where('createdDate', '>=', new Date('2019-05-19'))
+    .where('createdDate', '>=', new Date('2019-05-27'))
     // .where('createdDate', '<=', new Date('2019-05-10'))
     .get()
     .then(snapshot => {
