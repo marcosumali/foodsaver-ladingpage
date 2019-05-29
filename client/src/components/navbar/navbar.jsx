@@ -10,6 +10,14 @@ import './navbar.css';
 import Logo from '../logo/logo';
 
 export default class navbar extends Component {
+  constructor() {
+    super()
+
+    this.state = { 
+      bg: 'transparent' 
+    }
+  }
+
   setEventLinkWhyDishkon = () => {
     ReactGA.event({
       category: 'User',
@@ -25,6 +33,20 @@ export default class navbar extends Component {
       action: 'Click Link Untuk Pengelola Bisnis - Navbar',
       label: 'User click link on navigation bar',
       nonInteraction: true
+    })
+  }
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY >= 900) {
+        this.setState({
+          bg: "light"
+        })
+      } else {
+        this.setState({
+          bg: "transparent"
+        })
+      }
     })
   }
 

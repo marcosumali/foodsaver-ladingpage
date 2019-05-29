@@ -1,6 +1,6 @@
 .Register-page {
   background-image: linear-gradient(-90deg,#F45087 0%,#FF8B8B 100%)!important;
-  height: 100vh;
+  height: 125vh;
 }
 
 .Registration-box {
@@ -11,7 +11,7 @@
 }
 
 .Registration-inner-box {
-  max-height: 80vh;
+  /* max-height: 80vh; */
   overflow-y: scroll;
 }
 
