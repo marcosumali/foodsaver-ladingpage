@@ -167,6 +167,7 @@ export const avengerRegisterInputValidation = (props, window, id) => {
       email.length > 0 && validateEmail(email) === true &&
       gender.length > 0 && gender !== 'jenis kelamin' && 
       dobDate.length > 0 && dobDate !== 'tanggal' && dobMonth.length > 0 && dobMonth !== 'bulan' && dobYear.length > 0 && dobYear !== 'tahun' && 
+      city.length > 0 && city !== 'nama kota tempat tinggal anda' &&
       whatsapp.length > 0 && phoneResult.status === true) {
       await dispatch(setLoadingStatus(true))
       await dispatch(createNewAvenger(id, name, email, gender, dobDate, dobMonth, dobYear, city, whatsapp, window))
@@ -330,7 +331,7 @@ export const getAvengers = () => {
     let avengerRef = firestore.collection('avenger')
     
     avengerRef
-    .where('createdDate', '>=', new Date('2019-05-27'))
+    .where('createdDate', '>=', new Date('2019-05-28'))
     // .where('createdDate', '<=', new Date('2019-05-10'))
     .get()
     .then(snapshot => {
