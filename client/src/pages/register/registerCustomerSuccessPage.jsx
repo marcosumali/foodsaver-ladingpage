@@ -15,7 +15,7 @@ import Logo from '../../components/logo/logo';
 
 class registerSuccessPage extends Component {
   componentDidMount() {
-    ReactGA.pageview('/register-success');
+    ReactGA.pageview('/register-customer-success');
   }
 
   render() {
