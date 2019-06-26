@@ -9,11 +9,13 @@ const AUTH_PASS = process.env.SENDGRID_PASS
 const AUTO_EMAIL = process.env.EMAIL_CEO
 const USERS_LIST = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/users.csv'), 'utf-8').split('\n')
 const REGISTER_EMAIL = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.html'), 'utf-8')
+const REGISTER_EMAIL_IND = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.ind.html'), 'utf-8')
 const REMINDER_EMAIL = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.reminder.html'), 'utf-8')
+const REMINDER_EMAIL_IND = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.reminder.ind.html'), 'utf-8')
 
 module.exports = {
   avengersAssemble (req, res) {
-    let { purpose } = req.body
+    let { purpose, language } = req.body
 
     // CREATING THE USER LIST FROM TXT
     let users = []
@@ -41,8 +43,14 @@ module.exports = {
         let customerNameCapitalize = customerName.charAt(0).toUpperCase() + customerName.slice(1)
         let customerEmail = userData.email
         let customerUrl = userData.url
-    
-        let emailTemplate = REGISTER_EMAIL
+        
+        let emailTemplate = ""
+        
+        if (language === 'english') {
+          emailTemplate = REGISTER_EMAIL
+        } else {
+          emailTemplate = REGISTER_EMAIL_IND
+        }
     
         // setting up email with data in handlebars
         let template = handlebars.compile(emailTemplate)
@@ -95,7 +103,7 @@ module.exports = {
     }
   },
   avengersAssembleReminder (req, res) {
-    let { purpose } = req.body
+    let { purpose, language } = req.body
 
     // CREATING THE USER LIST FROM TXT
     let users = []
@@ -123,9 +131,14 @@ module.exports = {
         let customerNameCapitalize = customerName.charAt(0).toUpperCase() + customerName.slice(1)
         let customerEmail = userData.email
         let customerUrl = userData.url
-    
-        let emailTemplate = REMINDER_EMAIL
-    
+        
+        let emailTemplate = ""
+        if (language === 'english') {
+          emailTemplate = REMINDER_EMAIL
+        } else {
+          emailTemplate = REMINDER_EMAIL_IND
+        }
+
         // setting up email with data in handlebars
         let template = handlebars.compile(emailTemplate)
         let data = { 'name': customerNameCapitalize, 'url': customerUrl }
