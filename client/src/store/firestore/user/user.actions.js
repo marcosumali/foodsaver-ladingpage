@@ -144,7 +144,7 @@ export const getUsers = () => {
     let userRef = firestore.collection('user')
     
     userRef
-    .where('createdDate', '>=', new Date('2019-06-25'))
+    .where('createdDate', '>=', new Date('2019-07-07'))
     // .where('createdDate', '<=', new Date('2019-05-10'))
     .get()
     .then(snapshot => {

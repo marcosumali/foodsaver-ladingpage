@@ -7,11 +7,11 @@ const path = require('path');
 const AUTH_USERNAME = process.env.SENDGRID_USERNAME
 const AUTH_PASS = process.env.SENDGRID_PASS
 const AUTO_EMAIL = process.env.EMAIL_CEO
-const USERS_LIST = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/users.csv'), 'utf-8').split('\n')
-const REGISTER_EMAIL = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.html'), 'utf-8')
-const REGISTER_EMAIL_IND = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.ind.html'), 'utf-8')
-const REMINDER_EMAIL = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.reminder.html'), 'utf-8')
-const REMINDER_EMAIL_IND = fs.readFileSync(path.join(__dirname, '../nodemailer/templates/avengers.assemble.reminder.ind.html'), 'utf-8')
+const USERS_LIST = fs.readFileSync(path.join(__dirname, '../../nodemailer/templates/registration/users.csv'), 'utf-8').split('\n')
+const REGISTER_EMAIL = fs.readFileSync(path.join(__dirname, '../../nodemailer/templates/registration/avengers.assemble.html'), 'utf-8')
+const REGISTER_EMAIL_IND = fs.readFileSync(path.join(__dirname, '../../nodemailer/templates/registration/avengers.assemble.ind.html'), 'utf-8')
+const REMINDER_EMAIL = fs.readFileSync(path.join(__dirname, '../../nodemailer/templates/registration/avengers.assemble.reminder.html'), 'utf-8')
+const REMINDER_EMAIL_IND = fs.readFileSync(path.join(__dirname, '../../nodemailer/templates/registration/avengers.assemble.reminder.ind.html'), 'utf-8')
 
 module.exports = {
   avengersAssemble (req, res) {
@@ -89,6 +89,7 @@ module.exports = {
             console.log(`Avengers Assemble Message sent to ${userData.name} ${userData.email}`, info.message)
             if (score >= users.length) {
               console.log(`Email sent: ${score}`)
+              console.log(`Language: ${language}`)
               res.status(200).json({
                 message: 'Avengers Assemble Message is sent',
               })    
@@ -176,6 +177,7 @@ module.exports = {
             console.log(`Avengers Assemble Reminder Message sent to ${userData.name} ${userData.email}`, info.message)
             if (score >= users.length) {
               console.log(`Email sent: ${score}`)
+              console.log(`Language: ${language}`)
               res.status(200).json({
                 message: 'Avengers Assemble Reminder Message is sent',
               })    
