@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import '../../assets/css/general.css';
-import NavigationBar from '../../components/navbar/navbar';
 import Header from '../../components/header/header';
 import ProblemPage from '../../components/problem/problem';
 import WastePage from '../../components/forBusiness/donutShot';
 import ForBusinessPage from '../../components/forBusiness/forBusiness';
+import DownloadPage from '../../components/download/Download';
 import Footer from '../../components/footer/footer';
 import { getUsers } from '../../store/firestore/user/user.actions';
 import { getAvengers } from '../../store/firestore/avenger/avenger.actions';
@@ -37,9 +37,9 @@ class homePage extends Component {
             },
           ]}
         />
-        <NavigationBar />
         <Header />
         <ProblemPage />
+        <DownloadPage />
         <WastePage />
         <ForBusinessPage />
         <Footer />

@@ -1,46 +1,93 @@
-.Header-box {
-  /* padding-top: 10vh; */
-  min-height: 90vh;
-  background-image: linear-gradient(-90deg,#F45087 0%,#FF8B8B 100%)!important;
+.Background-box {
+  min-height: 100vh;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/foodsaver-app.appspot.com/o/general%2FBackground-pancake-min.png?alt=media&token=9f3a8ee6-e41a-45bd-8393-f24af8c4416c");
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.Header-inner-box {
-  min-height: 90vh;
+.Bg-header-box {
+  height: 80vh;
+  padding: 0px 120px;
 }
 
-.Header-text {
+.Bg-inside-box {
+  margin-bottom: 8px;
+}
+
+.Bg-header-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5vh;
+  font-size: 24px;
   color: #ffffff; 
+  /* text-align: center; */
 }
 
-.Header-image {
-  margin-bottom: 2em;
+.Bg-second-box {
+  margin-bottom: 16px;
 }
 
-.Header-desc-text {
+.Bg-text {
   font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   color: #ffffff; 
+  /* text-align: center; */
 }
 
-.Header-text-box {
-  margin-bottom: 2em;
+.Marketplace-box {
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  margin: 16px 0px;
+  padding: 8px;
 }
 
-.Header-desc-text-box {
-  margin-bottom: 2em;
+.Marketplace-box:hover {
+  background-color: rgba(0,0,0,0.5);
+  border: 2px solid transparent;
 }
 
-.Header-download-box {
-  margin-bottom: 2em;
+.Marketplace-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #ffffff; 
+  text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-  .Header-image {
-    width: 75%;
-    margin-top: 4em;
+@media only screen and (min-width: 903px) and (max-width: 1200px) {
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .Bg-header-box {
+    padding: 0px 40px;
   }
-  .Header-text, .Header-desc-text {
-    text-align: center; 
+  
+  .Bg-header-text {
+    font-size: 22px;
+  }
+
+  .Bg-text {
+    font-size: 14px;
+  }
+
+  .Marketplace-text {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 600px) { 
+  .Bg-header-box {
+    padding: 0px;
+  }
+  
+  .Bg-header-text {
+    font-size: 16px;
+  }
+
+  .Bg-text {
+    font-size: 12px;
+  }
+
+  .Marketplace-text {
+    font-size: 12px;
   }
 }

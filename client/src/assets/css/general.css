@@ -44,6 +44,13 @@
   align-items: center;
 }
 
+.Container-wrap-center-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
 .Container-wrap-center-cross {
   display: flex;
   flex-wrap: wrap;

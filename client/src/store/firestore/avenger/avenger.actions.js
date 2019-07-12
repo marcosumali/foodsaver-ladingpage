@@ -234,9 +234,9 @@ export const createNewAvenger = (id, name, email, gender, dobDate, dobMonth, dob
       name, email, gender, dobDate, dobMonth, dobYear, city, whatsapp: formatPhone(whatsapp, 'E.164'), createdDate
     }
     let firestore = getFirestore()
-    let avengerRef = firestore.collection('avenger').doc(id)
+    let avengerRef = firestore.collection('avenger')
 
-    avengerRef.set(newAvenger)
+    avengerRef.add(newAvenger)
     .then(async () => {
       await ReactGA.ga('send', {
         hitType: 'event',
@@ -264,9 +264,12 @@ export const createNewAvenger = (id, name, email, gender, dobDate, dobMonth, dob
 
       await dispatch(setAvengerWhatsappNo(''))
       await dispatch(setAvgWhatsappInputError(false))
+      
+      // // For Avenger Registration
+      // await window.location.assign(`/avengers-assemble-success/${id}`)
+      await window.location.assign(`/rangers-assemble-success`)
 
       await dispatch(setLoadingStatus(false))
-      await window.location.assign(`/avengers-assemble-success/${id}`)
     })
     .catch(async err => {
       await ReactGA.ga('send', {
