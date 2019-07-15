@@ -112,24 +112,6 @@ export default class footer extends Component {
     })
   }
 
-  setEventOurMarketplace = () => {
-    ReactGA.event({
-      category: 'Marketplace',
-      action: 'Click Marketplace',
-      label: 'User click link to see our marketplace',
-      nonInteraction: true
-    })
-  }
-
-  setEventRangerRegister = () => {
-    ReactGA.event({
-      category: 'Avenger',
-      action: 'Click Ranger Register',
-      label: 'User click link to register as Ranger',
-      nonInteraction: true
-    })
-  }
-
   render() {
     let modalClose = () => this.setState({ modalShow: false })
     
@@ -166,9 +148,27 @@ export default class footer extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={12}>
+            <Col xs={12} md={6}>
               <Row>
-                <Col xs={12} md={{ span: 3, offset: 3 }}>
+                <Col xs={12} md={6}>
+                  <div className="Download-store-box Container-nowrap-center">
+                    <Link to="/register-user" onClick={ () => this.setEventAppleDownload() }>
+                      <img className="Download-store-img" src={ process.env.PUBLIC_URL + '/assets/img/Get_on_Appstore_icon.png' } alt="Download-app-black" />
+                    </Link>
+                  </div>
+                </Col>
+                <Col xs={12} md={6}>
+                  <div className="Download-store-box Container-nowrap-center">
+                    <Link to="/register-user" onClick={ () => this.setEventAndroidDownload() }>
+                      <img className="Download-store-img" src={ process.env.PUBLIC_URL + '/assets/img/Get_on_Google_icon.png' } alt="Download-app-black" />
+                    </Link>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+            <Col xs={12} md={6}>
+              <Row>
+                <Col xs={12} md={6}>
                   <Row className="Link-box">
                     <Col md={12}>
                       <div className="Link-header">Quick Links</div>
@@ -183,14 +183,9 @@ export default class footer extends Component {
                         <div className="Link-text">Untuk Pengelola Bisnis</div>
                       </a>
                     </Col>
-                    <Col md={12}>
-                      <Link to="/rangers-assemble" onClick={ () => this.setEventRangerRegister() }>
-                        <div className="Link-text">Daftar Komunitas Online</div>
-                      </Link>
-                    </Col>
                   </Row>
                 </Col>
-                <Col xs={12} md={{ span: 5, offset: 1 }}>
+                <Col xs={12} md={6}>
                   <Row className="Link-box">
                     <Col md={12}>
                       <div className="Link-header">Dishkon</div>
@@ -202,20 +197,11 @@ export default class footer extends Component {
                     </Col>
                     <Col md={12}>
                       <div className="Link-text" onClick={() => { this.setState({ modalShow: true }); this.setEventLinkContact() }}>Hubungi Kami</div>
+
                       <ContactModal
                         show={this.state.modalShow}
                         onHide={modalClose}
                       />
-                    </Col>
-                    <Col md={12}>
-                      <a 
-                        href="https://shopee.co.id/dishkon" 
-                        target="_blank" 
-                        rel="noopener noreferrer"                      
-                        onClick={ () => this.setEventOurMarketplace() }
-                      >
-                        <div className="Link-text">Marketplace Kami</div>
-                      </a>
                     </Col>
                   </Row>
                 </Col>

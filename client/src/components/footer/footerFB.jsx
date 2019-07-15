@@ -4,7 +4,6 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
 import './footer.css';
@@ -168,7 +167,7 @@ export default class footer extends Component {
           <Row>
             <Col xs={12}>
               <Row>
-                <Col xs={12} md={{ span: 3, offset: 3 }}>
+                <Col xs={12} md={{ span: 5, offset: 1 }} lg={{ span: 5, offset: 1 }} xl={{ span: 3, offset: 3 }}>
                   <Row className="Link-box">
                     <Col md={12}>
                       <div className="Link-header">Quick Links</div>
@@ -182,11 +181,6 @@ export default class footer extends Component {
                       <a href="#Pengelola-bisnis" onClick={ () => this.setEventLinkForBusiness() }>
                         <div className="Link-text">Untuk Pengelola Bisnis</div>
                       </a>
-                    </Col>
-                    <Col md={12}>
-                      <Link to="/rangers-assemble" onClick={ () => this.setEventRangerRegister() }>
-                        <div className="Link-text">Daftar Komunitas Online</div>
-                      </Link>
                     </Col>
                   </Row>
                 </Col>
@@ -206,16 +200,6 @@ export default class footer extends Component {
                         show={this.state.modalShow}
                         onHide={modalClose}
                       />
-                    </Col>
-                    <Col md={12}>
-                      <a 
-                        href="https://shopee.co.id/dishkon" 
-                        target="_blank" 
-                        rel="noopener noreferrer"                      
-                        onClick={ () => this.setEventOurMarketplace() }
-                      >
-                        <div className="Link-text">Marketplace Kami</div>
-                      </a>
                     </Col>
                   </Row>
                 </Col>

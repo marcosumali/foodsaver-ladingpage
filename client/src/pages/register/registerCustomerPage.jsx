@@ -13,7 +13,7 @@ import { Helmet } from "react-helmet";
 
 import './register.css';
 import '../../assets/css/swal.css';
-import Logo from '../../components/logo/logo';
+import LogoFB from '../../components/logo/logoFB';
 import {
   handleCustomerInputChanges,
   customerRegisterInputValidation
@@ -55,7 +55,7 @@ class registerCustomerPage extends Component {
         <Container className="Height-100cent">
           <Row>
             <Col md={12} className="Regisration-logo-box Container-nowrap-center">
-              <Logo />
+              <LogoFB />
             </Col>
           </Row>
           <Row className="Container-nowrap-center">

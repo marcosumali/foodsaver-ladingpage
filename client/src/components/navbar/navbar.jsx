@@ -7,7 +7,7 @@ import ReactGA from 'react-ga';
 
 import '../../assets/css/react-strap.css';
 import './navbar.css';
-import Logo from '../logo/logo';
+import LogoFB from '../logo/logoFB';
 
 export default class navbar extends Component {
   constructor() {
@@ -54,7 +54,7 @@ export default class navbar extends Component {
     return (
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Navbar.Brand>
-          <Logo />
+          <LogoFB />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

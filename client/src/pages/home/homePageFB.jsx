@@ -5,24 +5,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import '../../assets/css/general.css';
-import Header from '../../components/header/headerV0';
+import HeaderFB from '../../components/header/headerFB';
 import ProblemPage from '../../components/problem/problem';
 import WastePage from '../../components/forBusiness/donutShot';
 import ForBusinessPage from '../../components/forBusiness/forBusiness';
-// import DownloadPage from '../../components/download/Download';
-import Footer from '../../components/footer/footerV0';
-import { getUsers } from '../../store/firestore/user/user.actions';
-import { getAvengers } from '../../store/firestore/avenger/avenger.actions';
+import FooterFB from '../../components/footer/footerFB';
 
-class homePage extends Component {
-  componentWillMount() {
-    // // Only live when getting users data
-    // this.props.getUsers()
-    // this.props.getAvengers()
-  }
-
+class homePageFB extends Component {
   componentDidMount() {
-    ReactGA.pageview('/');
+    ReactGA.pageview('/for-business');
   }
 
   render() {
@@ -37,12 +28,11 @@ class homePage extends Component {
             },
           ]}
         />
-        <Header />
+        <HeaderFB />
         <ProblemPage />
-        {/* <DownloadPage /> */}
         <WastePage />
         <ForBusinessPage />
-        <Footer />
+        <FooterFB />
       </div>
     )
   }
@@ -55,9 +45,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getUsers,
-  getAvengers,
 }, dispatch)
 
 
-export default connect(mapStateToProps, mapDispatchToProps) (homePage);
+export default connect(mapStateToProps, mapDispatchToProps) (homePageFB);

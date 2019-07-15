@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet";
 
 import './register.css';
 import '../../assets/css/swal.css';
-import Logo from '../../components/logo/logo';
+import LogoFB from '../../components/logo/logoFB';
 
 class registerSuccessPage extends Component {
   componentDidMount() {
@@ -27,7 +27,7 @@ class registerSuccessPage extends Component {
         <Container className="Height-100cent">
           <Row>
             <Col md={12} className="Regisration-logo-box Container-nowrap-center">
-              <Logo />
+              <LogoFB />
             </Col>
           </Row>
           <Row className="Container-nowrap-center">
@@ -41,13 +41,16 @@ class registerSuccessPage extends Component {
                     <div className="Success-header">Dear Customer,</div>
 
                     <div className="Success-paragraphs">
-                      Terima kasih sudah mendaftarkan bisnis Anda pada kami, aplikasi penyelamat makanan pertama di Indonesia. 
-                      Tim kami akan segera menghubungi Anda untuk informasi kerja sama lebih lanjut.
+                      Terima kasih sudah mendaftarkan bisnis Anda pada kami, 
+                      tim kami akan segera menghubungi Anda untuk informasi kerja sama lebih lanjut.
                     </div>
 
                     <div className="Success-paragraphs">
-                      Misi sederhana kami adalah untuk mengurangi jumlah sampah makanan di Indonesia dengan cara mendistribusikan makanan yang tidak terjual dan layak makan langsung ke konsumen dengan harga diskon sebelum kadaluwarsa sehingga Anda akan mendapatkan manfaat maksimal dari setiap makanan yang sudah Anda masak.
-                      Jika Anda ingin terlibat dalam perkembangan atau jika Anda memiliki pertanyaan, silakan hubungi kami di <a style={{ color: '#F45087', textDecoration: 'underline' }} href="mailto:support@dishkon.co">support@dishkon.co</a>.
+                      Misi kami adalah untuk mengurangi jumlah sampah makanan di Indonesia dengan cara mendistribusikan makanan layak konsumsi yang tidak terjual langsung ke konsumen dengan harga dishkon sehingga Anda akan mendapatkan manfaat maksimal dari setiap makanan yang sudah Anda produksi.
+                    </div>
+
+                    <div className="Success-paragraphs">
+                      Jika Anda ingin terlibat atau memiliki pertanyaan, silakan hubungi kami di <a style={{ color: '#F45087', textDecoration: 'underline' }} href="mailto:support@dishkon.co">support@dishkon.co</a>.
                     </div>
 
                     <div className="Success-paragraphs">
