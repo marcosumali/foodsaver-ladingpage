@@ -12,6 +12,7 @@ import RegisterAvengerSuccessPage from './pages/register/registerAvengerSuccessP
 import RegisterRangerPage from './pages/register/registerRangerPage';
 import RegisterRangerSuccessPage from './pages/register/registerRangerSuccessPage';
 import HomePageForBusiness from './pages/home/homePageFB';
+import PrivacyPolicyPage from './pages/policy/Privacy';
 
 class App extends Component {
   render() {
@@ -57,6 +58,10 @@ class App extends Component {
           <Route
             exact path="/for-business" 
             render={ (props) => (<HomePageForBusiness {...props} />) } 
+          />
+          <Route
+            exact path="/privacy-policy" 
+            render={ (props) => (<PrivacyPolicyPage {...props} />) } 
           />
           <Route path="/error" component={ ErrorPage } />
           <Route path="*" component={ ErrorPage } />
