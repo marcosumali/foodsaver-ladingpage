@@ -5,9 +5,10 @@ import {
   Col
 } from 'react-bootstrap';
 import ReactGA from 'react-ga';
+import { Link } from 'react-router-dom';
 
 import './header.css';
-import NavigationBar from '../../components/navbar/navbar';
+import NavigationBar from '../navbar/navbar';
 
 export default class header extends Component {
   setEventOurMarketplace = () => {
@@ -15,6 +16,15 @@ export default class header extends Component {
       category: 'Marketplace',
       action: 'Click Marketplace',
       label: 'User click link to see our marketplace',
+      nonInteraction: true
+    })
+  }
+
+  setEvenCustomerRegister = () => {
+    ReactGA.event({
+      category: 'Customer',
+      action: 'Click Register - Customer',
+      label: 'User click link to register their business',
       nonInteraction: true
     })
   }
@@ -34,17 +44,11 @@ export default class header extends Component {
                   <div className="Bg-text">13 juta ton makanan terbuang di Indonesia. Dengan Marketplace Dishkon, kamu dapat menemukan berbagai makanan lezat dari restoran, kafe, toko kue dan pasar swalayan untuk dinikmati dengan harga dishkon.</div>
                 </Col>
                 <Col sm={12} className="Container-nowrap-start">
-                  <a 
-                    style={{ textDecoration: 'none' }}  
-                    href="https://shopee.co.id/dishkon" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    onClick={ () => this.setEventOurMarketplace() }
-                  >
+                  <Link to="/register-customer" style={{ textDecoration: 'none' }} onClick={ () => this.setEvenCustomerRegister() }>
                     <div className="Marketplace-box Container-nowrap-center">
-                      <div className="Marketplace-text">Marketplace Kami</div>
+                      <div className="Marketplace-text">Daftarkan Bisnis Anda</div>
                     </div>
-                  </a>
+                  </Link>
                 </Col>
               </Row>
             </Col>

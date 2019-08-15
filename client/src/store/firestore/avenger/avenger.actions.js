@@ -167,6 +167,7 @@ export const avengerRegisterInputValidation = (props, window, id) => {
       email.length > 0 && validateEmail(email) === true &&
       gender.length > 0 && gender !== 'jenis kelamin' && 
       dobDate.length > 0 && dobDate !== 'tanggal' && dobMonth.length > 0 && dobMonth !== 'bulan' && dobYear.length > 0 && dobYear !== 'tahun' && 
+      city.length > 0 && city !== 'nama kota tempat tinggal anda' &&
       whatsapp.length > 0 && phoneResult.status === true) {
       await dispatch(setLoadingStatus(true))
       await dispatch(createNewAvenger(id, name, email, gender, dobDate, dobMonth, dobYear, city, whatsapp, window))
@@ -233,9 +234,9 @@ export const createNewAvenger = (id, name, email, gender, dobDate, dobMonth, dob
       name, email, gender, dobDate, dobMonth, dobYear, city, whatsapp: formatPhone(whatsapp, 'E.164'), createdDate
     }
     let firestore = getFirestore()
-    let avengerRef = firestore.collection('avenger').doc(id)
+    let avengerRef = firestore.collection('avenger')
 
-    avengerRef.set(newAvenger)
+    avengerRef.add(newAvenger)
     .then(async () => {
       await ReactGA.ga('send', {
         hitType: 'event',
@@ -263,9 +264,12 @@ export const createNewAvenger = (id, name, email, gender, dobDate, dobMonth, dob
 
       await dispatch(setAvengerWhatsappNo(''))
       await dispatch(setAvgWhatsappInputError(false))
+      
+      // // For Avenger Registration
+      // await window.location.assign(`/avengers-assemble-success/${id}`)
+      await window.location.assign(`/rangers-assemble-success`)
 
       await dispatch(setLoadingStatus(false))
-      await window.location.assign(`/avengers-assemble-success/${id}`)
     })
     .catch(async err => {
       await ReactGA.ga('send', {
@@ -330,7 +334,7 @@ export const getAvengers = () => {
     let avengerRef = firestore.collection('avenger')
     
     avengerRef
-    .where('createdDate', '>=', new Date('2019-05-27'))
+    .where('createdDate', '>=', new Date('2019-07-15'))
     // .where('createdDate', '<=', new Date('2019-05-10'))
     .get()
     .then(snapshot => {

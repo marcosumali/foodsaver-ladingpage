@@ -11,7 +11,7 @@
 
 .Business-header-center {
   font-family: 'Montserrat', sans-serif;
-  font-size: 5vh;
+  font-size: 4vh;
   color: #F45087;
   font-weight: bold;
   text-align: center;
@@ -109,6 +109,10 @@
   margin-bottom: 2em;
 }
 
+.Donut-box {
+  min-width: 650px;
+}
+
 @media only screen and (max-width: 600px) {
   .Business-box {
     border-radius: 0px;
@@ -138,6 +142,10 @@
 
   .Donut-text-inner {
     display: none;
+  }
+
+  .Donut-box {
+    min-width: 300px;
   }
 }
 
@@ -173,7 +181,7 @@
   }
   
   .Donut-text {
-    font-size: 2.75vh;
+    font-size: 28px;
     margin-bottom: 2em;
   }
 

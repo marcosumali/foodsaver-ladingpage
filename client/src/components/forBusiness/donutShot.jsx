@@ -17,7 +17,7 @@ export default class donutShot extends Component {
                     <Col md={12}>
                       <div className="Donut-header">Perhitungan supply dan demand pada industry makanan sulit dilakukan.</div>
                     </Col>
-                    <Col md={12} className="No-padding">
+                    <Col md={12} className="No-padding Donut-box">
                       <div className="Donut-text">
                         Memperkirakan demand makanan setiap hari, mingguan atau tahunan tidaklah mudah.&nbsp;
                         <div className="Donut-text-inner">Faktanya, hal ini adalah salah satu penyebab utama sampah makanan di industri ini.</div>
